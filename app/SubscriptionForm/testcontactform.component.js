@@ -1,4 +1,4 @@
-System.register(['angular2/core', './SubscriptionForm/testcontactform.component'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,37 @@ System.register(['angular2/core', './SubscriptionForm/testcontactform.component'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, testcontactform_component_1;
-    var AppComponent;
+    var core_1;
+    var TestContactComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (testcontactform_component_1_1) {
-                testcontactform_component_1 = testcontactform_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            TestContactComponent = (function () {
+                function TestContactComponent() {
+                    this.frequencies = [
+                        { id: 1, label: 'Daily' },
+                        { id: 2, label: 'Weekly' },
+                        { id: 3, label: 'Monthly' }
+                    ];
                 }
-                AppComponent = __decorate([
+                TestContactComponent.prototype.sendForm = function (form) {
+                    alert('valid email');
+                    console.log(form.value);
+                };
+                TestContactComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: "<testcontact></testcontact>",
-                        directives: [testcontactform_component_1.TestContactComponent],
+                        selector: 'testcontact',
+                        templateUrl: 'app/SubscriptionForm/testcontactform.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], TestContactComponent);
+                return TestContactComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("TestContactComponent", TestContactComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=testcontactform.component.js.map
